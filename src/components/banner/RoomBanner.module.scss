@@ -1,0 +1,15 @@
+.banner__image {
+    height: 596px;
+    background-repeat: none;
+    background-position: bottom;
+    overflow: hidden;
+    background-size: cover;
+
+    &--first {
+        height: 596px;
+    }
+
+    &--others {
+        height: 298px;
+    }
+}

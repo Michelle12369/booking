@@ -1,0 +1,39 @@
+.banner-container {
+    position: relative;
+}
+
+.carousel-item {
+    overflow: hidden;
+    height: 660px;
+}
+
+.carousel-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    filter: brightness(.8);
+    -webkit-filter: brightness(.7);
+}
+
+.banner-title {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.30);
+    width: 148px;
+    height: 148px;
+    position: absolute;
+    left: calc((100% - 148px)/2);
+    top: 170px;
+    font-size: 31px;
+    letter-spacing: 3.24px;
+    line-height: 74px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.banner-content {
+    width: 280px;
+    position: absolute;
+    left: calc((100% - 280px)/2);
+    top: 368px;
+    color: #fff;
+}

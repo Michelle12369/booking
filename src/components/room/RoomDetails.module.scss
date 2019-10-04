@@ -1,0 +1,48 @@
+.room {
+    padding-left: 10% !important;
+    margin-bottom: 72px;
+
+    &__title {
+        margin: 48px 0 7px;
+
+        h3 {
+            font-size: 36px;
+        }
+    }
+
+    &__normal-price {
+        font-size: 30px;
+    }
+
+    &__holiday-price {
+        font-size: 16px;
+    }
+
+    &__date {
+        color: grey;
+    }
+
+    &__basic {
+        div {
+            margin: 7px 0;
+        }
+    }
+
+    &__time {
+        margin: 21px 0 40px;
+    }
+
+    &__check {
+        font-size: 21px;
+    }
+
+    &__supplies {
+        background: #F0F0F0;
+        padding: 22px 0;
+    }
+
+    &__icon {
+        margin-right: 18px;
+        margin-bottom: 30px;
+    }
+}
