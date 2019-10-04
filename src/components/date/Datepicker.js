@@ -11,7 +11,7 @@ import 'react-dates/initialize';
 import { DayPickerSingleDateController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import ReservationModal from '../reservation/ReservationModal';
-import { showModal } from '../../store/actions/roomActions'
+import { showModal, changeBookingStatus } from '../../store/actions/roomActions'
 
 
 ThemedStyleSheet.registerInterface(aphroditeInterface);
@@ -32,7 +32,7 @@ class Datepicker extends Component {
 	render() {
 		moment.locale('zh-cn');
 		let dates = null;
-		const { booking, showModal } = this.props;
+		const { booking, showModal, returnToReserve } = this.props;
 		if (booking.data) {
 			dates = booking.data.map((i) => i.date)
 		}
@@ -42,7 +42,10 @@ class Datepicker extends Component {
 					daySize={45}
 					numberOfMonths={1}
 					monthFormat="YYYY / MM"
-					onDateChange={date => showModal(true)}
+					onDateChange={date => {
+						showModal(true)
+						returnToReserve()
+					}}
 					isDayBlocked={day => dates && day.isBetween(moment(dates[0]).add(-1, 'd'), moment(dates.slice(-1)[0]).add(2, 'd'))}
 					focused={this.state.focused}
 					onFocusChange={({ focused }) => this.setState({ focused })}
@@ -60,6 +63,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+	returnToReserve: () => dispatch(changeBookingStatus()),
 	showModal: (showed) => dispatch(showModal(showed))
 })
 

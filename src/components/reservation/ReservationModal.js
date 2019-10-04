@@ -5,9 +5,8 @@ import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import ReserveTime from './ReserveTime';
 import ReserveFail from './ReserveFail';
 import ReserveSuccess from './ReserveSuccess';
-import { changeBookingStatus, deleteReservation } from '../../store/actions/roomActions';
+import { changeBookingStatus, deleteReservation, showModal } from '../../store/actions/roomActions';
 import style from './ReservationModal.module.scss';
-import { showModal } from '../../store/actions/roomActions'
 
 class ReservationModal extends Component {
     render() {
@@ -33,7 +32,7 @@ class ReservationModal extends Component {
                         <Col>
                             <Button className={style["modal__btn-submit"]} onClick={() => {
                                 deleteReservation()
-                                window.location.href = this.props.match.url
+                                window.location.reload()
                             }}>清除所有預約</Button>
                         </Col>
                     </Row>
